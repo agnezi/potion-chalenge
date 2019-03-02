@@ -1,11 +1,18 @@
 <template>
 	<div id="app">
-		<Cabecalho />
-		<MenuPrincipal />
-		<CabecalhoMobile />
+		<header>
+			<CabecalhoMobile />
+			<Cabecalho />
+			<nav>
+				<MenuPrincipal />
+			</nav>
+		</header>
 		<main>
 			<router-view />
 		</main>
+		<footer>
+			<Rodape />
+		</footer>
 	</div>
 </template>
 
@@ -13,9 +20,9 @@
 import Cabecalho from "./components/Cabecalho.vue";
 import MenuPrincipal from "./components/MenuPrincipal.vue";
 import CabecalhoMobile from "./components/CabecalhoMobile.vue";
-
+import Rodape from "./components/Rodape.vue";
 export default {
-	components: { Cabecalho, MenuPrincipal, CabecalhoMobile }
+	components: { Cabecalho, MenuPrincipal, CabecalhoMobile, Rodape }
 };
 </script>
 

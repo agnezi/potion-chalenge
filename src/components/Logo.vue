@@ -1,8 +1,8 @@
 <template>
 	<div id="logo">
-		<div class="wrapper">
-			<span class="wrapper__empresa-nome"><b>Merlin's</b> Potions</span>
-			<span class="wrapper__empresa-slogan">fine potions since 1026</span>
+		<div class="logo-wrapper">
+			<span class="logo-wrapper__empresa-nome"><b>Merlin's</b> Potions</span>
+			<span class="logo-wrapper__empresa-slogan">fine potions since 1026</span>
 		</div>
 	</div>
 </template>
@@ -15,42 +15,38 @@ export default {
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Charm:400,700");
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
-@import '../assets/scss/grid';
-@include respond-to("extra-small") {
-	#logo {
-		.wrapper {
-			display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;
-			&__empresa-nome {
-				color: rgb(214, 0, 0);
-				font-size: 2rem;
-        text-transform: uppercase;
-        font-family: 'Roboto Condensed', sans-serif;
-
-			}
-			&__empresa-slogan {
-				color: rgb(107, 62, 125);
-				font-family: "Charm", cursive;
-				font-size: 1.2rem;
-				font-weight: bold;
-				&::before {
-					content: "   ";
-					width: 15px;
-					height: 2px;
-					background-color: rgb(195, 195, 195);
-				}
-				&::after {
-					content: "   ";
-					background-color: rgb(195, 195, 195);
-					height: 1px;
-					width: 3px;
-				}
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
+@import "../assets/scss/grid";
+#logo {
+	.logo-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&__empresa-nome {
+			color: rgb(214, 0, 0);
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			font-family: "Roboto Condensed", sans-serif;
+			&:after {
+				content: " ";
+				margin-top: 0.5rem;
+				display: block;
+				background-color: rgb(236, 236, 236);
+				width: 100%;
+				height: 1px;
 			}
 		}
+		&__empresa-slogan {
+			color: rgb(107, 62, 125);
+			font-family: "Charm", cursive;
+			font-weight: bold;
+			position: absolute;
+			top: 3.5rem;
+			background-color: rgb(255, 255, 255);
+		}
 	}
+}
+@include respond-to("extra-small") {
 }
 @include respond-to("small") {
 }

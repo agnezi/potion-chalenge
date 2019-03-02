@@ -8,6 +8,7 @@
 						(mostraMenu = !mostraMenu),
 							(mostraLogo = !mostraLogo),
 							(mostraBusca = !mostraBusca),
+							(mostraCarrinho = !mostraCarrinho),
 							(mostraClose = !mostraClose),
 							(mostraHamburguer = !mostraHamburguer);
 					}
@@ -20,6 +21,7 @@
 				@click="function() {
 						(mostraMenu = !mostraMenu),
 							(mostraLogo = !mostraLogo),
+							(mostraCarrinho = !mostraCarrinho),
 							(mostraBusca = !mostraBusca),
 							(mostraHamburguer = !mostraHamburguer),
 							(mostraClose = !mostraClose);
@@ -28,6 +30,7 @@
 				v-if="!mostraClose"
 			/>
 			<Logo class="cabecalho-mobile__logo" v-if="!mostraLogo" />
+			<Carrinho class="cabecalho-mobile__carrinho" v-if="!mostraCarrinho"/>
 			<Busca class="cabecalho-mobile__busca" v-if="!mostraBusca" />
 		</div>
 		<div class="menu-mobile-hidden" v-if="!mostraMenu">
@@ -45,22 +48,28 @@
 				<span>Sign Up</span>
 			</div>
 		</div>
+			<span class="frete-gratis">
+				Free shippinng on orders over $50
+			</span>
 	</div>
 </template>
 
 <script>
 import Logo from "./Logo.vue";
+import Carrinho from './Carrinho.vue';
 import Busca from "./Busca.vue";
 export default {
 	name: "CabecalhoMobile",
 	components: {
 		Logo,
+		Carrinho,
 		Busca
 	},
 	data() {
 		return {
 			mostraMenu: true,
 			mostraLogo: false,
+			mostraCarrinho: false,
 			mostraBusca: true,
 			mostraClose: true,
 			mostraHamburguer: false
@@ -72,14 +81,13 @@ export default {
 <style lang='scss'>
 @import url("https://fonts.googleapis.com/css?family=Cormorant+Infant|Gabriela");
 @import "../assets/scss/grid";
-@include respond-to("extra-small") {
 	#cabecalho-mobile {
 		.cabecalho-mobile {
 			display: flex;
 			align-items: center;
-			padding: 1.5rem;
+			justify-content: space-around;
+			padding: 1.5rem 0 0.5rem 0;
 			.menu__icon {
-				margin-right: 1.3rem;
 				font-size: 2rem;
 				color: rgb(79, 51, 109);
 			}
@@ -119,6 +127,14 @@ export default {
 				text-align: center;
 			}
 		}
+		.frete-gratis {
+			background-color: rgb(236,236,236);
+			display: flex;
+			justify-content: center;
+			padding: 0.5rem 0;
+			font-style: italic;
+			color: gray;
+		}
 	}
 	@keyframes fade {
 		from {
@@ -128,12 +144,21 @@ export default {
 			opacity: 1;
 		}
 	}
+@include respond-to("extra-small") {
 }
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+	#cabecalho-mobile {
+		display: none;
+	}
 }
 @include respond-to("large") {
+	#cabecalho-mobile {
+		display: none;
+	}
+}
+@include respond-to("extra-large"){
 	#cabecalho-mobile {
 		display: none;
 	}

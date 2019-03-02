@@ -28,9 +28,6 @@ export default {
 <style lang="scss">
 @import "../assets/scss/grid";
 #cabecalho {
-	.cabecalho-wrapper{
-		display: flex;
-	}
 }
 @include respond-to("extra-small") {
 	#cabecalho {
@@ -38,12 +35,12 @@ export default {
 	}
 }
 @include respond-to("small") {
-	#cabecalho{
+	#cabecalho {
 		display: none;
 	}
 }
 @include respond-to("medium") {
-	#cabecalho{
+	#cabecalho {
 		display: none;
 	}
 }
