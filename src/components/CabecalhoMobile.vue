@@ -1,0 +1,141 @@
+<template>
+	<div id="cabecalho-mobile">
+		<div class="cabecalho-mobile">
+			<font-awesome-icon
+				:icon="['fas', 'bars']"
+				class="menu__icon"
+				@click="function() {
+						(mostraMenu = !mostraMenu),
+							(mostraLogo = !mostraLogo),
+							(mostraBusca = !mostraBusca),
+							(mostraClose = !mostraClose),
+							(mostraHamburguer = !mostraHamburguer);
+					}
+				"
+				v-if="!mostraHamburguer"
+			/>
+			<font-awesome-icon
+				:icon="['fas', 'times']"
+				class="menu__icon"
+				@click="function() {
+						(mostraMenu = !mostraMenu),
+							(mostraLogo = !mostraLogo),
+							(mostraBusca = !mostraBusca),
+							(mostraHamburguer = !mostraHamburguer),
+							(mostraClose = !mostraClose);
+					}
+				"
+				v-if="!mostraClose"
+			/>
+			<Logo class="cabecalho-mobile__logo" v-if="!mostraLogo" />
+			<Busca class="cabecalho-mobile__busca" v-if="!mostraBusca" />
+		</div>
+		<div class="menu-mobile-hidden" v-if="!mostraMenu">
+			<ul class="menu-mobile-hidden__ul">
+				<li class="menu-mobile-hidden__ul--li">Potions</li>
+				<li class="menu-mobile-hidden__ul--li">Ingredients</li>
+				<li class="menu-mobile-hidden__ul--li">Books</li>
+				<li class="menu-mobile-hidden__ul--li">Supplies</li>
+				<li class="menu-mobile-hidden__ul--li">Charms</li>
+				<li class="menu-mobile-hidden__ul--li">Clearance!</li>
+			</ul>
+			<div class="menu-mobile-hidden__login">
+				<span>Sign In</span>
+				or
+				<span>Sign Up</span>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+import Logo from "./Logo.vue";
+import Busca from "./Busca.vue";
+export default {
+	name: "CabecalhoMobile",
+	components: {
+		Logo,
+		Busca
+	},
+	data() {
+		return {
+			mostraMenu: true,
+			mostraLogo: false,
+			mostraBusca: true,
+			mostraClose: true,
+			mostraHamburguer: false
+		};
+	}
+};
+</script>
+
+<style lang='scss'>
+@import url("https://fonts.googleapis.com/css?family=Cormorant+Infant|Gabriela");
+@import "../assets/scss/grid";
+@include respond-to("extra-small") {
+	#cabecalho-mobile {
+		.cabecalho-mobile {
+			display: flex;
+			align-items: center;
+			padding: 1.5rem;
+			.menu__icon {
+				margin-right: 1.3rem;
+				font-size: 2rem;
+				color: rgb(79, 51, 109);
+			}
+			&__logo {
+				animation: fade 0.5s ease-in-out;
+			}
+			&__busca {
+				animation: fade 0.5s ease-in-out;
+			}
+		}
+		.menu-mobile-hidden {
+			position: absolute;
+			width: 100%;
+			background-color: rgb(79, 51, 109);
+			font-family: "Cormorant Infant", serif;
+			font-weight: bold;
+			font-style: italic;
+			color: rgb(255, 255, 255);
+			animation: fade 0.5s ease-in-out;
+			&__ul {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				&--li {
+					width: 100%;
+					border-bottom: solid 1px rgb(106, 84, 131);
+					padding: 1rem 0 0.5rem 2rem;
+					font-size: 1.5rem;
+					transition: background-color 0.3s ease-in-out;
+					&:hover {
+						background-color: rgb(65, 42, 86);
+					}
+				}
+			}
+			&__login {
+				padding: 2rem 0 1rem 0;
+				text-align: center;
+			}
+		}
+	}
+	@keyframes fade {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+}
+@include respond-to("small") {
+}
+@include respond-to("medium") {
+}
+@include respond-to("large") {
+	#cabecalho-mobile {
+		display: none;
+	}
+}
+</style>
