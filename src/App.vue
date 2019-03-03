@@ -1,18 +1,20 @@
 <template>
 	<div id="app">
-		<header>
-			<CabecalhoMobile />
-			<Cabecalho />
-			<nav>
-				<MenuPrincipal />
-			</nav>
-		</header>
-		<main>
-			<router-view />
-		</main>
-		<footer>
-			<Rodape />
-		</footer>
+		<div class="container-fluid">
+			<header>
+				<CabecalhoMobile />
+				<Cabecalho />
+				<nav>
+					<MenuPrincipal />
+				</nav>
+			</header>
+			<main>
+				<router-view />
+			</main>
+			<footer>
+				<Rodape />
+			</footer>
+		</div>
 	</div>
 </template>
 

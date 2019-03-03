@@ -49,15 +49,43 @@ export default {
 		#busca {
 		.busca__wrapper {
 			&--input {
-        width: 5rem;
+				padding: 0.5rem 2rem;;
 			}
 			&--icon {
-				display: none;
-				position: block;
+				position: absolute;
+				left: 16.3rem;
+				top: 2rem;
 			}
 		}
 	}
 }
 @include respond-to("large") {
+	#busca {
+		.busca__wrapper {
+			&--input {
+				padding: 0.5rem 2rem;;
+			}
+			&--icon {
+				position: absolute;
+				left: 16.3rem;
+				top: 2rem;
+			}
+		}
+	}
+}
+@include respond-to('extra-large'){
+	#busca {
+		.busca__wrapper {
+			&--input {
+				padding: 0.5rem 2rem;;
+			}
+			&--icon {
+				position: absolute;
+				left: 48rem;
+				top: 2.5rem;
+			}
+		}
+	}
+
 }
 </style>

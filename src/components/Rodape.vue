@@ -1,12 +1,16 @@
 <template>
 	<div id="rodape">
 		<div class="rodape-wrapper">
-			<MenuCompania />
-			<Newsletter />
-			<MenuRedesSociais />
-			<span class="copyright">
-				&copy; 2015 Merlin's Potions. All Rights Reserved</span
-			>
+			<div class="rodape-wrapper__newsletter">
+				<Newsletter />
+			</div>
+			<div class="rodape-wrapper__navs">
+				<MenuCompania />
+				<MenuRedesSociais />
+				<span class="copyright">
+					&copy; 2015 Merlin's Potions. All Rights Reserved</span
+				>
+			</div>
 		</div>
 	</div>
 </template>
@@ -30,13 +34,14 @@ export default {
 	.rodape-wrapper {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-	}
-	.copyright {
-		order: 3;
-		color: gray;
-		font-size: 0.9rem;
-		margin: 1rem 0;
+		&__navs {
+			.copyright {
+				color: gray;
+				font-size: 0.9rem;
+				display: flex;
+				justify-content: center;
+			}
+		}
 	}
 }
 @include respond-to("extra-small") {
@@ -46,18 +51,94 @@ export default {
 @include respond-to("medium") {
 	#rodape {
 		.rodape-wrapper {
+			flex-direction: row;
+			align-items: flex-start;
+			&__navs {
+				padding: 1rem;
+				order: 1;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				width: 50%;
+				.copyright{
+					justify-content: start;
+				}
+			}
+			&__newsletter {
+				width: 50%;
+				order: 2;
+			}
+
 			.menu-compania {
-				display: block;
 			}
 			.menu-redes-sociais {
 			}
 			.newsletter {
 			}
 			.copyright {
+				padding: 0 0.5rem;
 			}
 		}
 	}
 }
 @include respond-to("large") {
+	#rodape {
+		.rodape-wrapper {
+			flex-direction: row;
+			align-items: flex-start;
+			&__navs {
+				padding: 1rem;
+				order: 1;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				width: 50%;
+				.copyright{
+					justify-content: start;
+				}
+			}
+			&__newsletter {
+				width: 50%;
+				order: 2;
+			}
+
+			.menu-compania {
+			}
+			.menu-redes-sociais {
+			}
+			.newsletter {
+			}
+			.copyright {
+				padding: 0 0.5rem;
+			}
+		}
+	}
+}
+@include respond-to('extra-large') {
+	#rodape {
+		.rodape-wrapper {
+			flex-direction: row;
+			align-items: flex-start;
+			&__navs {
+				padding: 1rem;
+				order: 1;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				width: 50%;
+				.copyright{
+					justify-content: start;
+				}
+			}
+			&__newsletter {
+				width: 50%;
+				order: 2;
+			}
+
+			.copyright {
+				padding: 0 0.5rem;
+			}
+		}
+	}
 }
 </style>

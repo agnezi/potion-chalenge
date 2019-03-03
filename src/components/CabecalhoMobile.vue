@@ -101,7 +101,7 @@ export default {
 	.menu-mobile-hidden {
 		position: absolute;
 		width: 100%;
-		background-color: rgb(79, 51, 109);
+		background-color: rgb(82,52,104);
 		font-family: "Cormorant Infant", serif;
 		font-weight: bold;
 		font-style: italic;

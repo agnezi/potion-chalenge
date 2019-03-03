@@ -26,8 +26,10 @@ export default {
 <style lang="scss">
 @import "../assets/scss/grid.scss";
 #newsletter {
-	width: 90%;
+	margin: 0 1rem;
 	.newsletter-wrapper {
+		border-radius: 0.04rem;
+		justify-content: space-around;
 		display: flex;
 		flex-direction: column;
 		background-color: rgb(255, 255, 255);
@@ -73,7 +75,69 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+	#newsletter {
+		width: 80%;
+		margin-left: 3rem;
+		.newsletter-wrapper {
+			.newsletter-wrapper__text {
+				&--newsletter {
+					font-size: 1rem;
+				}
+				&--descontos {
+					font-size: 0.7rem;
+				}
+			}
+			.newsletter-form__form {
+				input {
+				}
+				button {
+				}
+			}
+		}
+	}
 }
 @include respond-to("large") {
+	#newsletter {
+		width: 80%;
+		margin-left: 4rem;
+		.newsletter-wrapper {
+			.newsletter-wrapper__text {
+				&--newsletter {
+					font-size: 1rem;
+				}
+				&--descontos {
+					font-size: 0.7rem;
+				}
+			}
+			.newsletter-form__form {
+				input {
+				}
+				button {
+				}
+			}
+		}
+	}
+}
+@include respond-to("extra-large") {
+	#newsletter {
+		width: 80%;
+		margin-left: 5rem;
+		.newsletter-wrapper {
+			.newsletter-wrapper__text {
+				&--newsletter {
+					font-size: 1rem;
+				}
+				&--descontos {
+					font-size: 0.7rem;
+				}
+			}
+			.newsletter-form__form {
+				input {
+				}
+				button {
+				}
+			}
+		}
+	}
 }
 </style>

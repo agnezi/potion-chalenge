@@ -45,7 +45,54 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+	#carrinho {
+		.carrinho-wrapper {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			&__icon {
+			}
+			&__length {
+				margin-left: 1.3rem;
+				font-size: 1rem;
+				&--number {
+				}
+			}
+		}
+	}
 }
 @include respond-to("large") {
+	#carrinho {
+		.carrinho-wrapper {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			&__icon {
+			}
+			&__length {
+				margin-left: 1.3rem;
+				font-size: 1rem;
+				&--number {
+				}
+			}
+		}
+	}
+}
+@include respond-to("extra-large") {
+	#carrinho {
+		.carrinho-wrapper {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			&__icon {
+			}
+			&__length {
+				margin-left: 1.3rem;
+				font-size: 1rem;
+				&--number {
+				}
+			}
+		}
+	}
 }
 </style>

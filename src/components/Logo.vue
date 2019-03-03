@@ -27,22 +27,31 @@ export default {
 			font-size: 1.5rem;
 			text-transform: uppercase;
 			font-family: "Roboto Condensed", sans-serif;
-			&:after {
-				content: " ";
-				margin-top: 0.5rem;
-				display: block;
-				background-color: gray;
-				width: 100%;
-				height: 1px;
-			}
 		}
 		&__empresa-slogan {
 			color: rgb(107, 62, 125);
 			font-family: "Charm", cursive;
 			font-weight: bold;
-			position: absolute;
-			top: 3.5rem;
 			background-color: rgb(255, 255, 255);
+			font-size: 1rem;
+			&:after {
+				content: " ";
+				margin-top: 0.5rem;
+				display: inline-block;
+				background-color: gray;
+				width: 1rem;
+				height: 1px;
+				vertical-align: 0.3rem;
+			}
+			&:before {
+				content: " ";
+				margin-top: 0.5rem;
+				display: inline-block;
+				background-color: gray;
+				width: 1rem;
+				height: 1px;
+				vertical-align: 0.3rem;
+			}
 		}
 	}
 }
@@ -51,14 +60,27 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
-	#logo
-	.logo-wrapper{
-		order: 1;
+	#logo .logo-wrapper {
 		&__empresa-nome {
 		}
+		&__empresa-slogan {
+		}
 	}
-	
 }
 @include respond-to("large") {
+	#logo .logo-wrapper {
+		&__empresa-nome {
+		}
+		&__empresa-slogan {
+		}
+	}
+}
+@include respond-to("extra-large") {
+	#logo .logo-wrapper {
+		&__empresa-nome {
+		}
+		&__empresa-slogan {
+		}
+	}
 }
 </style>

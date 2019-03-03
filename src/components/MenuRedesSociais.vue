@@ -53,7 +53,8 @@ export default {
 	.menu-redes-sociais-wrapper {
 		&__ul {
 			display: flex;
-      justify-content: space-around;
+			justify-content: space-around;
+			margin-bottom: 1rem;
 			&--li {
 				font-size: 2rem;
 				color: rgb(80, 50, 110);
@@ -67,6 +68,17 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+	#menu-redes-sociais {
+		padding: 0;
+	.menu-redes-sociais-wrapper {
+		&__ul {
+			padding: 0 0.5rem;
+			justify-content: space-between;
+			&--li {
+			}
+		}
+	}
+}
 }
 @include respond-to("large") {
 }

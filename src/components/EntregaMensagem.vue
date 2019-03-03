@@ -3,7 +3,7 @@
 		<div class="entrega-mensagem-wrapper">
 			<span class="entrega-mensagem-wrapper__text">
 				Free shipping
-				<span class="entrega-mensagem-wrapper__text--row"
+				<span class="entrega-mensagem-wrapper__text--price"
 					>on orders over $50</span
 				>
 			</span>
@@ -29,7 +29,7 @@ export default {
 			padding: 0.5rem 0;
 			font-style: italic;
 			color: gray;
-			&--row {
+			&--price {
 			}
 		}
 	}
@@ -44,14 +44,46 @@ export default {
 			&__text {
 				flex-direction: column;
 				background-color: rgb(255, 255, 255);
-				font-size: 2vw;
+				font-size: 2.5vw;
 				color: rgb(255, 0, 0);
-				&--row {
+				&--price {
+					margin-top: 0.5rem;
+					font-size: 1.8vw;
 				}
 			}
 		}
 	}
 }
 @include respond-to("large") {
+	#entrega-mensagem {
+		.entrega-mensagem-wrapper {
+			&__text {
+				flex-direction: column;
+				background-color: rgb(255, 255, 255);
+				font-size: 2.5vw;
+				color: rgb(255, 0, 0);
+				&--price {
+					margin-top: 0.5rem;
+					font-size: 1.8vw;
+				}
+			}
+		}
+	}
+}
+@include respond-to('extra-large') {
+	#entrega-mensagem {
+		.entrega-mensagem-wrapper {
+			&__text {
+				flex-direction: column;
+				background-color: rgb(255, 255, 255);
+				font-size: 1.5rem;
+				color: rgb(255, 0, 0);
+				&--price {
+					margin-top: 0.5rem;
+					font-size: 1rem;
+				}
+			}
+		}
+	}
 }
 </style>

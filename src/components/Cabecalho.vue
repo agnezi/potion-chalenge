@@ -45,22 +45,26 @@ export default {
 }
 @include respond-to("medium") {
 	#cabecalho {
+		margin-top: 1rem;
 		.cabecalho-wrapper {
-			&__logo {
-				order: 1;
-			}
-			&__busca {
-				order: 2;
-			}
-			&__entrega-mensagem {
-				order: 3;
-			}
-			&__sacola {
-				order: 4;
-			}
+			align-items: center;
 		}
 	}
 }
 @include respond-to("large") {
+		#cabecalho {
+		margin-top: 1rem;
+		.cabecalho-wrapper {
+			align-items: center;
+		}
+	}
+}
+@include respond-to('extra-large'){
+		#cabecalho {
+		margin-top: 1rem;
+		.cabecalho-wrapper {
+			align-items: center;
+		}
+	}
 }
 </style>
