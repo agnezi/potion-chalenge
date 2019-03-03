@@ -51,6 +51,12 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+	#logo
+	.logo-wrapper{
+		order: 1;
+		&__empresa-nome {
+		}
+	}
 	
 }
 @include respond-to("large") {

@@ -2,7 +2,10 @@
 	<div id="entrega-mensagem">
 		<div class="entrega-mensagem-wrapper">
 			<span class="entrega-mensagem-wrapper__text">
-				Free shipping on orders over $50
+				Free shipping
+				<span class="entrega-mensagem-wrapper__text--row"
+					>on orders over $50</span
+				>
 			</span>
 		</div>
 	</div>
@@ -15,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../assets/scss/grid';
+@import "../assets/scss/grid";
 #entrega-mensagem {
 	.entrega-mensagem-wrapper {
 		&__text {
@@ -26,6 +29,8 @@ export default {
 			padding: 0.5rem 0;
 			font-style: italic;
 			color: gray;
+			&--row {
+			}
 		}
 	}
 }
@@ -34,6 +39,18 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+	#entrega-mensagem {
+		.entrega-mensagem-wrapper {
+			&__text {
+				flex-direction: column;
+				background-color: rgb(255, 255, 255);
+				font-size: 2vw;
+				color: rgb(255, 0, 0);
+				&--row {
+				}
+			}
+		}
+	}
 }
 @include respond-to("large") {
 }

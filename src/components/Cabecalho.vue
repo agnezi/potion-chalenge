@@ -1,10 +1,10 @@
 <template>
 	<div id="cabecalho">
 		<div class="cabecalho-wrapper">
-			<Logo class="cabecalho-wrapper__logo" />
-			<Busca class="cabecalho-wrapper__busca" />
-			<Carrinho class="cabecalho-wrapper__carrinho" />
-			<EntregaMensagem class="cabecalho-wrapper__EntregaMensagem" />
+			<Logo />
+			<Busca />
+			<EntregaMensagem />
+			<Carrinho />
 		</div>
 	</div>
 </template>

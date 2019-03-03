@@ -49,9 +49,11 @@ export default {
 		#busca {
 		.busca__wrapper {
 			&--input {
-        width: 30%;
+        width: 5rem;
 			}
 			&--icon {
+				display: none;
+				position: block;
 			}
 		}
 	}

@@ -26,42 +26,44 @@ export default {
 <style lang="scss">
 @import "../assets/scss/grid.scss";
 #newsletter {
+	width: 90%;
 	.newsletter-wrapper {
-    display: flex;
-    flex-direction: column;
+		display: flex;
+		flex-direction: column;
+		background-color: rgb(255, 255, 255);
+		margin-top: 1rem;
 		.newsletter-wrapper__text {
 			display: flex;
 			flex-direction: column;
-      padding: 1rem;
-      
+			padding: 1rem;
 			&--newsletter {
-        font-style: italic;
-        font-family: "Charm", cursive;
-        font-size: 0.6rem;
+				font-style: italic;
+				font-family: "Charm", cursive;
+				font-size: 0.6rem;
 			}
 			&--descontos {
-        font-size: 0.6rem;
-        margin-top: 1rem;
+				font-size: 0.6rem;
+				margin-top: 1rem;
 			}
 		}
 		.newsletter-form__form {
-      display: flex;
-      justify-content: space-around;
-      padding: 0 1rem 1rem 1rem;
-      input{
-        border: solid 1px rgb(0, 0, 0);
-        border-radius: 0.2rem;
-        padding: 0.3rem;
-        font-size: 0.6rem;
-        width: 65%;
-      }
-      button {
-        background-color: rgb(255, 0, 0);
-        border: none;
-        border-radius: 0.2rem;
-        color: rgb(255, 255, 255);
-        padding: 0.3rem 1rem;
-      }
+			display: flex;
+			justify-content: space-around;
+			padding: 0 1rem 1rem 1rem;
+			input {
+				border: solid 1px rgb(0, 0, 0);
+				border-radius: 0.2rem;
+				padding: 0.3rem;
+				font-size: 0.6rem;
+				width: 60%;
+			}
+			button {
+				background-color: rgb(255, 0, 0);
+				border: none;
+				border-radius: 0.2rem;
+				color: rgb(255, 255, 255);
+				padding: 0.3rem 1rem;
+			}
 		}
 	}
 }

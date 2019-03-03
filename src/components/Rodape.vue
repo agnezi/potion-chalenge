@@ -1,9 +1,9 @@
 <template>
 	<div id="rodape">
 		<div class="rodape-wrapper">
-			<MenuCompania class="menu-compania" />
-			<MenuRedesSociais class="menu-redes-sociais" />
-			<Newsletter class="newsletter" />
+			<MenuCompania />
+			<Newsletter />
+			<MenuRedesSociais />
 			<span class="copyright">
 				&copy; 2015 Merlin's Potions. All Rights Reserved</span
 			>
@@ -31,24 +31,12 @@ export default {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		.menu-compania {
-			display: none;
-		}
-		.menu-redes-sociais {
-			order: 2;
-		}
-		.newsletter {
-			order: 1;
-			background-color: rgb(255, 255, 255);
-			width: 90%;
-			margin-top: 1rem;
-		}
-		.copyright {
-      order: 3;
-      color: gray;
-      font-size: 0.9rem;
-      margin: 1rem 0;
-		}
+	}
+	.copyright {
+		order: 3;
+		color: gray;
+		font-size: 0.9rem;
+		margin: 1rem 0;
 	}
 }
 @include respond-to("extra-small") {
@@ -56,6 +44,19 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+	#rodape {
+		.rodape-wrapper {
+			.menu-compania {
+				display: block;
+			}
+			.menu-redes-sociais {
+			}
+			.newsletter {
+			}
+			.copyright {
+			}
+		}
+	}
 }
 @include respond-to("large") {
 }
