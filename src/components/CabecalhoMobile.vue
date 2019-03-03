@@ -30,7 +30,7 @@
 				v-if="!mostraClose"
 			/>
 			<Logo class="cabecalho-mobile__logo" v-if="!mostraLogo" />
-			<Carrinho class="cabecalho-mobile__carrinho" v-if="!mostraCarrinho"/>
+			<Carrinho class="cabecalho-mobile__carrinho" v-if="!mostraCarrinho" />
 			<Busca class="cabecalho-mobile__busca" v-if="!mostraBusca" />
 		</div>
 		<div class="menu-mobile-hidden" v-if="!mostraMenu">
@@ -48,22 +48,22 @@
 				<span>Sign Up</span>
 			</div>
 		</div>
-			<span class="frete-gratis">
-				Free shippinng on orders over $50
-			</span>
+		<EntregaMensagem />
 	</div>
 </template>
 
 <script>
 import Logo from "./Logo.vue";
-import Carrinho from './Carrinho.vue';
+import Carrinho from "./Carrinho.vue";
 import Busca from "./Busca.vue";
+import EntregaMensagem from './EntregaMensagem.vue';
 export default {
 	name: "CabecalhoMobile",
 	components: {
 		Logo,
 		Carrinho,
-		Busca
+		Busca,
+		EntregaMensagem
 	},
 	data() {
 		return {
@@ -81,69 +81,61 @@ export default {
 <style lang='scss'>
 @import url("https://fonts.googleapis.com/css?family=Cormorant+Infant|Gabriela");
 @import "../assets/scss/grid";
-	#cabecalho-mobile {
-		.cabecalho-mobile {
-			display: flex;
-			align-items: center;
-			justify-content: space-around;
-			padding: 1.5rem 0 0.5rem 0;
-			.menu__icon {
-				font-size: 2rem;
-				color: rgb(79, 51, 109);
-			}
-			&__logo {
-				animation: fade 0.5s ease-in-out;
-			}
-			&__busca {
-				animation: fade 0.5s ease-in-out;
-			}
+#cabecalho-mobile {
+	.cabecalho-mobile {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		padding: 1.5rem 0 0.5rem 0;
+		.menu__icon {
+			font-size: 2rem;
+			color: rgb(79, 51, 109);
 		}
-		.menu-mobile-hidden {
-			position: absolute;
-			width: 100%;
-			background-color: rgb(79, 51, 109);
-			font-family: "Cormorant Infant", serif;
-			font-weight: bold;
-			font-style: italic;
-			color: rgb(255, 255, 255);
+		&__logo {
 			animation: fade 0.5s ease-in-out;
-			&__ul {
+		}
+		&__busca {
+			animation: fade 0.5s ease-in-out;
+		}
+	}
+	.menu-mobile-hidden {
+		position: absolute;
+		width: 100%;
+		background-color: rgb(79, 51, 109);
+		font-family: "Cormorant Infant", serif;
+		font-weight: bold;
+		font-style: italic;
+		color: rgb(255, 255, 255);
+		animation: fade 0.5s ease-in-out;
+		&__ul {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			&--li {
 				width: 100%;
-				display: flex;
-				flex-direction: column;
-				&--li {
-					width: 100%;
-					border-bottom: solid 1px rgb(106, 84, 131);
-					padding: 1rem 0 0.5rem 2rem;
-					font-size: 1.5rem;
-					transition: background-color 0.3s ease-in-out;
-					&:hover {
-						background-color: rgb(65, 42, 86);
-					}
+				border-bottom: solid 1px rgb(106, 84, 131);
+				padding: 1rem 0 0.5rem 2rem;
+				font-size: 1.5rem;
+				transition: background-color 0.3s ease-in-out;
+				&:hover {
+					background-color: rgb(65, 42, 86);
 				}
 			}
-			&__login {
-				padding: 2rem 0 1rem 0;
-				text-align: center;
-			}
 		}
-		.frete-gratis {
-			background-color: rgb(236,236,236);
-			display: flex;
-			justify-content: center;
-			padding: 0.5rem 0;
-			font-style: italic;
-			color: gray;
+		&__login {
+			padding: 2rem 0 1rem 0;
+			text-align: center;
 		}
 	}
-	@keyframes fade {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
+}
+@keyframes fade {
+	from {
+		opacity: 0;
 	}
+	to {
+		opacity: 1;
+	}
+}
 @include respond-to("extra-small") {
 }
 @include respond-to("small") {
@@ -158,7 +150,7 @@ export default {
 		display: none;
 	}
 }
-@include respond-to("extra-large"){
+@include respond-to("extra-large") {
 	#cabecalho-mobile {
 		display: none;
 	}

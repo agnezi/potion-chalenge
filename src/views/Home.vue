@@ -51,11 +51,11 @@ export default {
           height: auto;
         }
         &__nome {
-          font-size: 0.6rem;
+          font-size: 3vw;
           font-weight: bold;
         }
         &__preco {
-          font-size: 0.6rem;
+          font-size: 3vw;
           color: rgb(255, 0, 0);
         }
       }

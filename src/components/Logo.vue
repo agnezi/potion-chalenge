@@ -31,7 +31,7 @@ export default {
 				content: " ";
 				margin-top: 0.5rem;
 				display: block;
-				background-color: rgb(236, 236, 236);
+				background-color: gray;
 				width: 100%;
 				height: 1px;
 			}
@@ -51,6 +51,7 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+	
 }
 @include respond-to("large") {
 }

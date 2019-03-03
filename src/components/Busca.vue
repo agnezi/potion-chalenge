@@ -23,29 +23,38 @@ export default {
 
 <style lang="scss">
 @import "../assets/scss/grid.scss";
-	#busca {
-		.busca__wrapper {
-      display: flex;
-			&--input {
-				border-radius: 0.3rem;
-				border: solid 1px rgb(0, 0, 0);
-				padding: 1rem 2rem;
-        width: 100%;
-			}
-			&--icon {
-				color: rgb(255, 0, 0);
-        position: absolute;
-        left: 4.5rem;
-        top: 2.5rem;
-			}
+#busca {
+	.busca__wrapper {
+		display: flex;
+		&--input {
+			border-radius: 0.3rem;
+			border: solid 1px rgb(0, 0, 0);
+			padding: 1rem 2rem;
+			width: 100%;
+		}
+		&--icon {
+			color: rgb(255, 0, 0);
+			position: absolute;
+			left: 4.5rem;
+			top: 2.5rem;
 		}
 	}
+}
 
 @include respond-to("extra-small") {
 }
 @include respond-to("small") {
 }
 @include respond-to("medium") {
+		#busca {
+		.busca__wrapper {
+			&--input {
+        width: 30%;
+			}
+			&--icon {
+			}
+		}
+	}
 }
 @include respond-to("large") {
 }
