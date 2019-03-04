@@ -54,9 +54,10 @@
                     <li>{{potion.ingredients[3]}}</li>
                     <li>{{potion.ingredients[4]}}</li>
                     <li>{{potion.ingredients[5]}}</li>
+                    <li>{{potion.ingredients[6]}}</li>
                   </ul>
                 </span>
-                <span>Price:</span>
+                <span class="home-ingredientes-wrapper__content-informacoes--preco-titulo">Price:</span>
                 <span
                   class="home-ingredientes-wrapper__content-informacoes--preco"
                 >${{potion.price}}</span>
@@ -104,24 +105,20 @@ export default {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    position: fixed;
+    z-index: 2;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
     animation: fade 1s ease-in-out;
     .home-ingredientes-wrapper {
       position: absolute;
       background-color: rgb(255, 255, 255);
       display: flex;
       flex-direction: column;
-      width: 40%;
-      border-radius: 0.4rem;
       &__content {
-        padding: 3rem 2rem;
         display: flex;
+        flex-direction: column;
         align-items: center;
         position: relative;
         &--fechar {
@@ -136,13 +133,12 @@ export default {
           height: auto;
         }
         &-informacoes {
+          text-align: center;
           display: flex;
           flex-direction: column;
-          justify-content: space-around;
-          width: 50%;
-          height: 100%;
-          left: 50%;
-          position: absolute;
+          span {
+            margin-top: 0.5rem;
+          }
           &--nome {
             font-weight: bold;
           }
@@ -156,6 +152,9 @@ export default {
           }
           &--ingredientes {
           }
+          &--preco-titulo {
+            font-weight: bold;
+          }
           &--preco {
             color: rgb(255, 0, 0);
           }
@@ -166,6 +165,9 @@ export default {
             border-radius: 0.3rem;
             color: rgb(255, 255, 255);
             padding: 0.5rem 0;
+            width: 50%;
+            align-self: center;
+            margin-top: 0.5rem;
           }
         }
       }
@@ -184,8 +186,10 @@ export default {
       width: 50%;
       padding: 1rem;
       text-align: center;
+      border: solid 1px rgba(0, 0, 0, 0);
+      transition: border 0.3s ease-in-out;
       &:hover {
-        border: solid 1px black;
+        border: solid 1px rgb(82, 52, 104);
         border-radius: 0.3rem;
       }
       &__imagem {
@@ -217,6 +221,87 @@ export default {
 }
 @include respond-to("medium") {
   #home {
+    .home-ingredientes {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fade 1s ease-in-out;
+      .home-ingredientes-wrapper {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        border-radius: 0.4rem;
+        &__content {
+          padding: 3rem 2rem;
+          display: flex;
+          align-items: center;
+          position: relative;
+          flex-direction: row;
+          &--fechar {
+            position: absolute;
+            top: 0.1rem;
+            right: 0.1rem;
+            font-size: 1.5rem;
+            z-index: 1;
+          }
+          img {
+            width: 50%;
+            height: auto;
+          }
+          &-informacoes {
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 50%;
+            height: 100%;
+            left: 50%;
+            position: absolute;
+            span {
+              margin-top: 0;
+            }
+            &--nome {
+              font-weight: bold;
+            }
+            &--uso {
+              font-weight: bold;
+            }
+            &--efeito {
+            }
+            &--ingrediente-titulo {
+              font-weight: bold;
+            }
+            &--ingredientes {
+            }
+            &--preco-titulo {
+              font-weight: bold;
+            }
+            &--preco {
+              color: rgb(255, 0, 0);
+            }
+            &--botao {
+              background-color: rgb(255, 0, 0);
+              border: none;
+              font-size: 1rem;
+              border-radius: 0.3rem;
+              color: rgb(255, 255, 255);
+              padding: 0.5rem 0;
+              align-self: start;
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
     .view-name {
       margin-left: 2rem;
       justify-content: start;
@@ -227,10 +312,10 @@ export default {
         padding: 2rem;
         width: 33.333333%;
         &__nome {
-          font-size: 1.5vw;
+          font-size: 1rem;
         }
         &__preco {
-          font-size: 1.5vw;
+          font-size: 1rem;
         }
       }
     }
@@ -238,6 +323,87 @@ export default {
 }
 @include respond-to("large") {
   #home {
+    .home-ingredientes {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fade 1s ease-in-out;
+      .home-ingredientes-wrapper {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        border-radius: 0.4rem;
+        &__content {
+          padding: 3rem 2rem;
+          display: flex;
+          align-items: center;
+          position: relative;
+          flex-direction: row;
+          &--fechar {
+            position: absolute;
+            top: 0.1rem;
+            right: 0.1rem;
+            font-size: 1.5rem;
+            z-index: 1;
+          }
+          img {
+            width: 50%;
+            height: auto;
+          }
+          &-informacoes {
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 50%;
+            height: 100%;
+            left: 50%;
+            position: absolute;
+            span {
+              margin-top: 0;
+            }
+            &--nome {
+              font-weight: bold;
+            }
+            &--uso {
+              font-weight: bold;
+            }
+            &--efeito {
+            }
+            &--ingrediente-titulo {
+              font-weight: bold;
+            }
+            &--ingredientes {
+            }
+            &--preco-titulo {
+              font-weight: bold;
+            }
+            &--preco {
+              color: rgb(255, 0, 0);
+            }
+            &--botao {
+              background-color: rgb(255, 0, 0);
+              border: none;
+              font-size: 1rem;
+              border-radius: 0.3rem;
+              color: rgb(255, 255, 255);
+              padding: 0.5rem 0;
+              align-self: start;
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
     .view-name {
       margin-left: 2rem;
       justify-content: start;
@@ -248,10 +414,10 @@ export default {
         padding: 2rem;
         width: 33.333333%;
         &__nome {
-          font-size: 1.5vw;
+          font-size: 1rem;
         }
         &__preco {
-          font-size: 1.5vw;
+          font-size: 1rem;
         }
       }
     }
@@ -259,6 +425,87 @@ export default {
 }
 @include respond-to("extra-large") {
   #home {
+    .home-ingredientes {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fade 1s ease-in-out;
+      .home-ingredientes-wrapper {
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        border-radius: 0.4rem;
+        &__content {
+          padding: 3rem 2rem;
+          display: flex;
+          align-items: center;
+          position: relative;
+          flex-direction: row;
+          &--fechar {
+            position: absolute;
+            top: 0.1rem;
+            right: 0.1rem;
+            font-size: 1.5rem;
+            z-index: 1;
+          }
+          img {
+            width: 50%;
+            height: auto;
+          }
+          &-informacoes {
+            text-align: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 50%;
+            height: 100%;
+            left: 50%;
+            position: absolute;
+            span {
+              margin-top: 0;
+            }
+            &--nome {
+              font-weight: bold;
+            }
+            &--uso {
+              font-weight: bold;
+            }
+            &--efeito {
+            }
+            &--ingrediente-titulo {
+              font-weight: bold;
+            }
+            &--ingredientes {
+            }
+            &--preco-titulo {
+              font-weight: bold;
+            }
+            &--preco {
+              color: rgb(255, 0, 0);
+            }
+            &--botao {
+              background-color: rgb(255, 0, 0);
+              border: none;
+              font-size: 1rem;
+              border-radius: 0.3rem;
+              color: rgb(255, 255, 255);
+              padding: 0.5rem 0;
+              align-self: start;
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
     .view-name {
       margin-left: 2rem;
       justify-content: start;
@@ -278,4 +525,4 @@ export default {
     }
   }
 }
-</style> */
+</style>
