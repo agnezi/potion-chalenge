@@ -9,10 +9,17 @@ Vue.use(VueAxios, axios);
 export default new Vuex.Store({
   state: {
     pots: [],
+    lightBoxPotion: []
   },
   mutations: {
     SET_POTS(state, pots) {
       state.pots = pots;
+    },
+    exibeLightBox(state, id){
+      return state.lightBoxPotion.push(id)
+    },
+    apagaLighBox(state,id){
+      return state.lightBoxPotion.splice(id)
     }
   },
   actions: {

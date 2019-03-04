@@ -1,4 +1,4 @@
-<template>
+/* <template>
   <div id="home">
     <span class="view-name">Potions</span>
     <div class="home-wrapper">
@@ -6,7 +6,7 @@
         class="potes"
         v-for="(potion, id) in pots"
         :key="id"
-        @click="ingredientes = !ingredientes"
+        @click="function(){(ingredientes = !ingredientes),(lightBox(potion.id))}"
       >
         <a href="#">
           <img
@@ -17,13 +17,52 @@
         </a>
         <span class="potes__nome">{{ potion.name }} -</span>
         <span class="potes__preco">${{ potion.price }}</span>
-        <div class="home-ingredientes-wrapper" v-if="!ingredientes">
-          <div class="home-ingredientes-wrapper__content">
-            <span>{{ potion.name }}</span>
-            <span>{{}}</span>
-            <span></span>
-            <span @click="ingredientes = !ingredientes">FECHAR</span>
-            <button>ADD TO CART</button>
+      </div>
+    </div>
+    <div class="home-ingredientes" v-if="!ingredientes">
+      <div
+        class="home-ingredientes-wrapper"
+        v-for="(clicado, index) in lightBoxPotion"
+        :key="index"
+      >
+        <div v-for="(potion, id) in pots" :key="id">
+          <div v-if="potion.id == clicado">
+            <div class="home-ingredientes-wrapper__content">
+              <font-awesome-icon
+                class="home-ingredientes-wrapper__content--fechar"
+                :icon="['fas', 'times']"
+                @click="function(){(ingredientes = !ingredientes), (resetLighBox(clicado.id))}"
+              />
+              <img
+                :src="require('../assets/img/' + potion.image)"
+                alt="Imagem de um pote de feitiços do Harry Potter"
+              >
+              <div class="home-ingredientes-wrapper__content-informacoes">
+                <span class="home-ingredientes-wrapper__content-informacoes--nome">{{ potion.name }}</span>
+                <span class="home-ingredientes-wrapper__content-informacoes--uso">Use/Effect:</span>
+                <span
+                  class="home-ingredientes-wrapper__content-informacoes--efeito"
+                >{{potion.effect}}</span>
+                <span
+                  class="home-ingredientes-wrapper__content-informacoes--ingrediente-titulo"
+                >Ingredients:</span>
+                <span class="home-ingredientes-wrapper__content-informacoes--ingredientes">
+                  <ul>
+                    <li>{{potion.ingredients[0]}}</li>
+                    <li>{{potion.ingredients[1]}}</li>
+                    <li>{{potion.ingredients[2]}}</li>
+                    <li>{{potion.ingredients[3]}}</li>
+                    <li>{{potion.ingredients[4]}}</li>
+                    <li>{{potion.ingredients[5]}}</li>
+                  </ul>
+                </span>
+                <span>Price:</span>
+                <span
+                  class="home-ingredientes-wrapper__content-informacoes--preco"
+                >${{potion.price}}</span>
+                <button class="home-ingredientes-wrapper__content-informacoes--botao">ADD TO CART</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -42,11 +81,18 @@ export default {
       ingredientes: true
     };
   },
-  components: {},
+  methods: {
+    lightBox(id) {
+      this.$store.commit("exibeLightBox", id);
+    },
+    resetLighBox(id) {
+      this.$store.commit("apagaLighBox", id);
+    }
+  },
   mounted() {
     this.$store.dispatch("loadPotions");
   },
-  computed: mapState(["pots"])
+  computed: mapState(["pots", "lightBoxPotion"])
 };
 </script>
 
@@ -54,20 +100,75 @@ export default {
 @import "../assets/scss/grid";
 #home {
   margin-top: 1.5rem;
-  .home-ingredientes-wrapper {
+  .home-ingredientes {
     width: 100%;
-    height: 100% !important;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1;
     display: flex;
+    align-items: center;
     justify-content: center;
-    &__content {
+    animation: fade 1s ease-in-out;
+    .home-ingredientes-wrapper {
       position: absolute;
       background-color: rgb(255, 255, 255);
-      padding: 10rem;
+      display: flex;
+      flex-direction: column;
+      width: 40%;
+      border-radius: 0.4rem;
+      &__content {
+        padding: 3rem 2rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        &--fechar {
+          position: absolute;
+          top: 0.1rem;
+          right: 0.1rem;
+          font-size: 1.5rem;
+          z-index: 1;
+        }
+        img {
+          width: 50%;
+          height: auto;
+        }
+        &-informacoes {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 50%;
+          height: 100%;
+          left: 50%;
+          position: absolute;
+          &--nome {
+            font-weight: bold;
+          }
+          &--uso {
+            font-weight: bold;
+          }
+          &--efeito {
+          }
+          &--ingrediente-titulo {
+            font-weight: bold;
+          }
+          &--ingredientes {
+          }
+          &--preco {
+            color: rgb(255, 0, 0);
+          }
+          &--botao {
+            background-color: rgb(255, 0, 0);
+            border: none;
+            font-size: 1rem;
+            border-radius: 0.3rem;
+            color: rgb(255, 255, 255);
+            padding: 0.5rem 0;
+          }
+        }
+      }
     }
   }
   .view-name {
@@ -100,6 +201,14 @@ export default {
         color: rgb(255, 0, 0);
       }
     }
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @include respond-to("extra-small") {
@@ -169,4 +278,4 @@ export default {
     }
   }
 }
-</style>
+</style> */

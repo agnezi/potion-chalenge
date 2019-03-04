@@ -32,9 +32,6 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
 @import "assets/css/reset.css";
 @import "assets/scss/grid.scss";
-html {
-	font-size: 10px;
-}
 * {
 	box-sizing: border-box;
 }
