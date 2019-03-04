@@ -1,5 +1,22 @@
 # Enext Potion Shop Test
 
+## Configuração do projeto
+```
+npm install
+```
+### Compila e cecarrega para o desenvolvimento
+```
+npm run serve
+```
+### Compila e reduz para produção
+```
+npm run build
+```
+### Procura por erros de nos arquivos
+```
+npm run lints
+```
+
 # Frameworks utilizados
 
 * Vue.js 2.6.6
@@ -27,6 +44,32 @@
 * Qualquer produto clicado faz com que o LightBox apareça
 
 -----------------------------------------------------------------------------------------
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
 
 # Frameworks 
 
