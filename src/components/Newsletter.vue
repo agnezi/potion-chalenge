@@ -28,7 +28,7 @@ export default {
 #newsletter {
 	margin: 0 1rem;
 	.newsletter-wrapper {
-		border-radius: 0.04rem;
+		border-radius: 0.4rem;
 		justify-content: space-around;
 		display: flex;
 		flex-direction: column;
@@ -37,11 +37,11 @@ export default {
 		.newsletter-wrapper__text {
 			display: flex;
 			flex-direction: column;
-			padding: 1rem;
+			padding: 0.5rem 1rem;
 			&--newsletter {
 				font-style: italic;
 				font-family: "Charm", cursive;
-				font-size: 0.6rem;
+				font-size: 1rem;
 			}
 			&--descontos {
 				font-size: 0.6rem;
@@ -51,20 +51,22 @@ export default {
 		.newsletter-form__form {
 			display: flex;
 			justify-content: space-around;
-			padding: 0 1rem 1rem 1rem;
+			padding: 1rem 0;
 			input {
 				border: solid 1px rgb(0, 0, 0);
 				border-radius: 0.2rem;
 				padding: 0.3rem;
 				font-size: 0.6rem;
-				width: 60%;
+				width: 70%;
 			}
 			button {
 				background-color: rgb(255, 0, 0);
 				border: none;
 				border-radius: 0.2rem;
 				color: rgb(255, 255, 255);
-				padding: 0.3rem 1rem;
+				font-size: 3vw;
+				padding: 0.3rem 0.5rem;
+				width: 20%;
 			}
 		}
 	}
@@ -89,8 +91,11 @@ export default {
 			}
 			.newsletter-form__form {
 				input {
+					width: 70%;
 				}
 				button {
+					width: 25%;
+					font-size: 1rem;
 				}
 			}
 		}
@@ -111,8 +116,11 @@ export default {
 			}
 			.newsletter-form__form {
 				input {
+					width: 70%;
 				}
 				button {
+					width: 25%;
+					font-size: 1rem;
 				}
 			}
 		}
@@ -123,6 +131,7 @@ export default {
 		width: 80%;
 		margin-left: 5rem;
 		.newsletter-wrapper {
+			padding: 1rem;
 			.newsletter-wrapper__text {
 				&--newsletter {
 					font-size: 1rem;
@@ -133,8 +142,11 @@ export default {
 			}
 			.newsletter-form__form {
 				input {
+					width: 70%;
 				}
 				button {
+					width: 25%;
+					font-size: 1rem;
 				}
 			}
 		}

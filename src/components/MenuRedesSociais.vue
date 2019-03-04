@@ -47,9 +47,9 @@ export default {
 @import "../assets/scss/grid.scss";
 
 #menu-redes-sociais {
-  width: 100%;
-  padding: 0 1rem;
-  margin-top: 1.5rem;
+	width: 100%;
+	padding: 0 1rem;
+	margin-top: 1.5rem;
 	.menu-redes-sociais-wrapper {
 		&__ul {
 			display: flex;
@@ -70,16 +70,42 @@ export default {
 @include respond-to("medium") {
 	#menu-redes-sociais {
 		padding: 0;
-	.menu-redes-sociais-wrapper {
-		&__ul {
-			padding: 0 0.5rem;
-			justify-content: space-between;
-			&--li {
+		.menu-redes-sociais-wrapper {
+			&__ul {
+				padding: 0 0.5rem;
+				justify-content: space-between;
+				&--li {
+				}
 			}
 		}
 	}
 }
-}
 @include respond-to("large") {
+	#menu-redes-sociais {
+		padding: 0;
+		.menu-redes-sociais-wrapper {
+			&__ul {
+				padding: 0 0.5rem;
+				justify-content: flex-start;
+				&--li {
+					margin-right: 4rem;
+				}
+			}
+		}
+	}
+}
+@include respond-to("extra-large") {
+	#menu-redes-sociais {
+		padding: 0;
+		.menu-redes-sociais-wrapper {
+			&__ul {
+				padding: 0 0.5rem;
+				justify-content: flex-start;
+				&--li {
+					margin-right: 4rem;
+				}
+			}
+		}
+	}
 }
 </style>

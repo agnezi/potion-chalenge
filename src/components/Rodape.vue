@@ -117,6 +117,7 @@ export default {
 @include respond-to('extra-large') {
 	#rodape {
 		.rodape-wrapper {
+			padding-bottom: 2rem;
 			flex-direction: row;
 			align-items: flex-start;
 			&__navs {

@@ -26,6 +26,7 @@ export default {
 #busca {
 	.busca__wrapper {
 		display: flex;
+		position: relative;
 		&--input {
 			border-radius: 0.3rem;
 			border: solid 1px rgb(0, 0, 0);
@@ -35,8 +36,8 @@ export default {
 		&--icon {
 			color: rgb(255, 0, 0);
 			position: absolute;
-			left: 4.5rem;
-			top: 2.5rem;
+			top: 1rem;
+			left: 0.5rem;
 		}
 	}
 }
@@ -46,15 +47,14 @@ export default {
 @include respond-to("small") {
 }
 @include respond-to("medium") {
-		#busca {
+	#busca {
 		.busca__wrapper {
 			&--input {
-				padding: 0.5rem 2rem;;
+				padding: 0.5rem 2rem;
 			}
 			&--icon {
-				position: absolute;
-				left: 16.3rem;
-				top: 2rem;
+				top: 0.5rem;
+				left: 0.5rem;
 			}
 		}
 	}
@@ -63,29 +63,26 @@ export default {
 	#busca {
 		.busca__wrapper {
 			&--input {
-				padding: 0.5rem 2rem;;
+				padding: 0.5rem 2rem;
 			}
 			&--icon {
-				position: absolute;
-				left: 16.3rem;
-				top: 2rem;
+				top: 0.5rem;
+				left: 0.5rem;
 			}
 		}
 	}
 }
-@include respond-to('extra-large'){
+@include respond-to("extra-large") {
 	#busca {
 		.busca__wrapper {
 			&--input {
-				padding: 0.5rem 2rem;;
+				padding: 0.5rem 2rem;
 			}
 			&--icon {
-				position: absolute;
-				left: 48rem;
-				top: 2.5rem;
+				top: 0.5rem;
+				left: 0.5rem;
 			}
 		}
 	}
-
 }
 </style>

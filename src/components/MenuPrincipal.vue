@@ -3,26 +3,36 @@
 		<div class="menu-principal-wrapper">
 			<ul class="menu-principal-wrapper__ul">
 				<li class="menu-principal-wrapper__ul--li">
-					Potions<i class="arrow"></i>
+					<a href="#">Potions<i class="arrow"></i></a>
 				</li>
 				<li class="menu-principal-wrapper__ul--li">
-					Ingredients<i class="arrow"></i>
+					<a href="#"> Ingredients<i class="arrow"></i> </a>
 				</li>
 				<li class="menu-principal-wrapper__ul--li">
-					Books<i class="arrow"></i>
+					<a href="#"> Books<i class="arrow"></i> </a>
 				</li>
 				<li class="menu-principal-wrapper__ul--li">
-					Supplies<i class="arrow"></i>
+					<a href="#"> Supplies<i class="arrow"></i> </a>
 				</li>
 				<li class="menu-principal-wrapper__ul--li">
-					Charms<i class="arrow"></i>
+					<a href="#"> Charms<i class="arrow"></i> </a>
 				</li>
-				<li class="menu-principal-wrapper__ul--li">Clearance!</li>
+				<li class="menu-principal-wrapper__ul--li">
+					<a href="#">Clearance!</a>
+				</li>
 			</ul>
 			<div class="menu-principal-wrapper__login">
-				<span>Sign In</span>
+				<span class="menu-principal-wrapper__login--entrar"
+					><a href="#">
+						Sign In
+					</a>
+				</span>
 				or
-				<span>Sign Up</span>
+				<span class="menu-principal-wrapper__login--registrar">
+					<a href="#">
+						Sign Up
+					</a>
+				</span>
 			</div>
 		</div>
 	</div>
@@ -54,6 +64,10 @@ export default {
 				&:hover {
 					background-color: rgb(65, 42, 86);
 				}
+				a {
+					text-decoration: none;
+					color: rgb(255, 255, 255);
+				}
 				.arrow {
 					border: solid rgb(255, 255, 255);
 					border-width: 0 2px 2px 0;
@@ -69,6 +83,18 @@ export default {
 		&__login {
 			color: rgb(255, 255, 255);
 			padding: 1rem;
+			a{
+				text-decoration: none;
+				color: rgb(255, 255, 255);
+			}
+			&--entrar {
+				font-weight: bold;
+				margin-right: 0.5rem;
+			}
+			&--registrar {
+				font-weight: bold;
+				margin-left: 0.5rem;
+			}
 		}
 	}
 }
@@ -87,8 +113,8 @@ export default {
 		display: block;
 	}
 }
-@include respond-to('extra-large') {
-	#menu-principal{
+@include respond-to("extra-large") {
+	#menu-principal {
 		display: block;
 	}
 }
