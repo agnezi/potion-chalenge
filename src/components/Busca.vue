@@ -6,6 +6,8 @@
 				name=""
 				class="busca__wrapper--input"
 				placeholder="Search our stock"
+				@keyup="busca"
+				:value="word"
 			/>
 			<font-awesome-icon
 				class="busca__wrapper--icon"
@@ -17,7 +19,12 @@
 
 <script>
 export default {
-	name: "Busca"
+	name: "Busca",
+	methods: {
+		busca(e){
+			this.$store.commit('filtroBusca', e.target.value)
+		}
+	}
 };
 </script>
 

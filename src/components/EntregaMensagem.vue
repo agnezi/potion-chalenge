@@ -3,7 +3,7 @@
     <div class="entrega-mensagem-wrapper">
       <span class="entrega-mensagem-wrapper__text">
         Free shipping
-        <span class="entrega-mensagem-wrapper__text--price">on orders over $50</span>
+        <span class="entrega-mensagem-wrapper__text--price"> on orders over $50</span>
       </span>
     </div>
   </div>
