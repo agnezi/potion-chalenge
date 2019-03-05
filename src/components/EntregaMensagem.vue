@@ -2,7 +2,7 @@
   <div id="entrega-mensagem">
     <div class="entrega-mensagem-wrapper">
       <span class="entrega-mensagem-wrapper__text">
-        Free shipping
+        Free shipping 
         <span class="entrega-mensagem-wrapper__text--price"> on orders over $50</span>
       </span>
     </div>
@@ -28,6 +28,7 @@ export default {
       font-style: italic;
       color: gray;
       &--price {
+        margin-left: 0.4rem;
       }
     }
   }
