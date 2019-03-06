@@ -12,7 +12,7 @@ npm run serve
 ```
 npm run build
 ```
-### Procura por erros de nos arquivos
+### Procura por erros nos arquivos
 ```
 npm run lints
 ```
