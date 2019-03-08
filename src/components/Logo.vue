@@ -18,6 +18,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed");
 @import "../assets/scss/grid";
 #logo {
+	animation: fromTop 1s ease-in-out;
 	.logo-wrapper {
 		display: flex;
 		flex-direction: column;
@@ -53,6 +54,13 @@ export default {
 				vertical-align: 0.3rem;
 			}
 		}
+	}
+}
+@keyframes fromTop{
+	from{
+		transform: translateY(-10rem);
+	} to {
+		transform: translateY(0)
 	}
 }
 @include respond-to("extra-small") {

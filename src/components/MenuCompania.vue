@@ -2,11 +2,21 @@
   <div id="menu-compania">
     <div class="menu-compania-wrapper">
       <ul class="menu-compania-wrapper__ul">
-        <li class="menu-compania-wrapper__ul--li">Company</li>
-        <li class="menu-compania-wrapper__ul--li">Contact us</li>
-        <li class="menu-compania-wrapper__ul--li">Shipping</li>
-        <li class="menu-compania-wrapper__ul--li">Returns</li>
-        <li class="menu-compania-wrapper__ul--li">Carrers</li>
+        <li class="menu-compania-wrapper__ul--li">
+          <a href="#">Company</a>
+        </li>
+        <li class="menu-compania-wrapper__ul--li">
+          <a href="#">Contact us</a>
+        </li>
+        <li class="menu-compania-wrapper__ul--li">
+          <a href="#">Shipping</a>
+        </li>
+        <li class="menu-compania-wrapper__ul--li">
+          <a href="#">Returns</a>
+        </li>
+        <li class="menu-compania-wrapper__ul--li">
+          <a href="#">Carrers</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -26,10 +36,14 @@ export default {
       display: flex;
       flex-wrap: wrap;
       &--li {
-        color: rgb(255, 0, 0);
-        padding: 0 0.5rem;
+        padding: 0 1rem;
         text-transform: uppercase;
         margin-right: 1rem;
+        font-size: 1.1rem;
+        a {
+          text-decoration: none;
+          color: rgb(255, 0, 0);
+        }
       }
     }
   }
@@ -56,10 +70,6 @@ export default {
         display: flex;
         flex-wrap: wrap;
         &--li {
-          color: rgb(255, 0, 0);
-          padding: 0 0.5rem;
-          text-transform: uppercase;
-          margin-right: 1rem;
         }
       }
     }

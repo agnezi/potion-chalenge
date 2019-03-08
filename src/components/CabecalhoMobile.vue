@@ -119,7 +119,7 @@ export default {
         width: 100%;
         border-bottom: solid 1px rgb(106, 84, 131);
         padding: 1rem 0 0.5rem 2rem;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         transition: background-color 0.3s ease-in-out;
         &:hover {
           background-color: rgb(65, 42, 86);

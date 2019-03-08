@@ -138,6 +138,7 @@ export default {
 
 			.copyright {
 				padding: 0 0.5rem;
+				margin-top: 1rem;
 			}
 		}
 	}

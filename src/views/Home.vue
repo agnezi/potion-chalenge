@@ -2,50 +2,30 @@
   <div id="home">
     <span class="view-name">Potions</span>
     <div class="home-wrapper">
-      <div
-        class="potes"
-        v-for="(potion, id) in pots"
-        :key="id"
-        @click="function(){(ingredientes = !ingredientes),(lightBox(potion.id))}"
-      >
+      <div class="potes" v-for="(potion, id) in pots" :key="id" @click="function(){(ingredientes = !ingredientes),(lightBox(potion.id))}">
         <a href="#">
-          <img
-            class="potes__imagem"
-            :src="require('../assets/img/' + potion.image)"
-            alt="Imagem de um pote de feitiços do Harry Potter"
-          >
+          <img class="potes__imagem" :src="require('../assets/img/' + potion.image)" alt="Imagem de um pote de feitiços do Harry Potter">
         </a>
-        <span class="potes__nome">{{ potion.name }} -</span>
-        <span class="potes__preco">${{ potion.price }}</span>
+        <span class="potes__nome">
+          <a href="#">{{ potion.name }} -</a>
+        </span>
+        <span class="potes__preco">
+          <a href="#">${{ potion.price }}</a>
+        </span>
       </div>
     </div>
     <div class="home-ingredientes" v-if="!ingredientes">
-      <div
-        class="home-ingredientes-wrapper"
-        v-for="(clicado, index) in lightBoxPotion"
-        :key="index"
-      >
+      <div class="home-ingredientes-wrapper" v-for="(clicado, index) in lightBoxPotion" :key="index">
         <div v-for="(potion, id) in pots" :key="id">
           <div v-if="potion.id == clicado">
             <div class="home-ingredientes-wrapper__content">
-              <font-awesome-icon
-                class="home-ingredientes-wrapper__content--fechar"
-                :icon="['fas', 'times']"
-                @click="function(){(ingredientes = !ingredientes), (resetLighBox(clicado.id))}"
-              />
-              <img
-                :src="require('../assets/img/' + potion.image)"
-                alt="Imagem de um pote de feitiços do Harry Potter"
-              >
+              <font-awesome-icon class="home-ingredientes-wrapper__content--fechar" :icon="['fas', 'times']" @click="function(){(ingredientes = !ingredientes), (resetLighBox(clicado.id))}"/>
+              <img :src="require('../assets/img/' + potion.image)" alt="Imagem de um pote de feitiços do Harry Potter">
               <div class="home-ingredientes-wrapper__content-informacoes">
                 <span class="home-ingredientes-wrapper__content-informacoes--nome">{{ potion.name }}</span>
                 <span class="home-ingredientes-wrapper__content-informacoes--uso">Use/Effect:</span>
-                <span
-                  class="home-ingredientes-wrapper__content-informacoes--efeito"
-                >{{potion.effect}}</span>
-                <span
-                  class="home-ingredientes-wrapper__content-informacoes--ingrediente-titulo"
-                >Ingredients:</span>
+                <span class="home-ingredientes-wrapper__content-informacoes--efeito">{{potion.effect}}</span>
+                <span class="home-ingredientes-wrapper__content-informacoes--ingrediente-titulo">Ingredients:</span>
                 <span class="home-ingredientes-wrapper__content-informacoes--ingredientes">
                   <ul>
                     <li>{{potion.ingredients[0]}}</li>
@@ -58,9 +38,7 @@
                   </ul>
                 </span>
                 <span class="home-ingredientes-wrapper__content-informacoes--preco-titulo">Price:</span>
-                <span
-                  class="home-ingredientes-wrapper__content-informacoes--preco"
-                >${{potion.price}}</span>
+                <span class="home-ingredientes-wrapper__content-informacoes--preco">${{potion.price}}</span>
                 <button class="home-ingredientes-wrapper__content-informacoes--botao">ADD TO CART</button>
               </div>
             </div>
@@ -100,13 +78,14 @@ export default {
 <style lang="scss">
 @import "../assets/scss/grid";
 #home {
+  animation: fade 2s ease-in-out;
   margin-top: 1.5rem;
   .home-ingredientes {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    z-index: 2;
-    position: absolute;
+    z-index: 3;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -197,12 +176,19 @@ export default {
         height: auto;
       }
       &__nome {
-        font-size: 3vw;
-        font-weight: bold;
+        a {
+          text-decoration: none;
+          color: rgb(0, 0, 0);
+          font-size: 3vw;
+          font-weight: bold;
+        }
       }
       &__preco {
-        font-size: 3vw;
-        color: rgb(255, 0, 0);
+        a {
+          text-decoration: none;
+          font-size: 3vw;
+          color: rgb(255, 0, 0);
+        }
       }
     }
   }
@@ -312,10 +298,14 @@ export default {
         padding: 2rem;
         width: 33.333333%;
         &__nome {
-          font-size: 1rem;
+          a {
+            font-size: 1rem;
+          }
         }
         &__preco {
-          font-size: 1rem;
+          a {
+            font-size: 1rem;
+          }
         }
       }
     }
@@ -414,13 +404,25 @@ export default {
         padding: 2rem;
         width: 33.333333%;
         &__nome {
-          font-size: 1rem;
+          a {
+            font-size: 1rem;
+          }
         }
         &__preco {
-          font-size: 1rem;
+          a {
+            font-size: 1rem;
+          }
         }
       }
     }
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 @include respond-to("extra-large") {
@@ -516,10 +518,14 @@ export default {
         padding: 2rem;
         width: 33.333333%;
         &__nome {
-          font-size: 1rem;
+          a {
+            font-size: 1rem;
+          }
         }
         &__preco {
-          font-size: 1rem;
+          a {
+            font-size: 1rem;
+          }
         }
       }
     }
