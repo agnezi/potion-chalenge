@@ -1,5 +1,7 @@
 # Enext Potion Shop Test
 
+## Esse projeto foi um dos primeiros testes para Front-End que eu fiz
+
 ## Configuração do projeto
 ```
 npm install
